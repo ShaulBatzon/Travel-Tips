@@ -7,7 +7,7 @@ window.onPanTo = onPanTo;
 window.onGetLocs = onGetLocs;
 window.onGetUserPos = onGetUserPos;
 window.onGo = onGo;
-
+window.onMyLocation = onMyLocation;
 
 function onInit() {
     mapService.initMap()
@@ -45,6 +45,7 @@ function onGetUserPos() {
             document.querySelector('.user-pos').innerText =
                 `Latitude: ${pos.coords.latitude} - Longitude: ${pos.coords.longitude}`
             mapService.panTo(pos.coords.latitude, pos.coords.longitude)
+            mapService.addMarker({lat:pos.coords.latitude,lng:pos.coords.longitude})
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -65,5 +66,5 @@ function onGo(ev) {
 function onMyLocation() {
     mapService.panTo(pos.coords.latitude, pos.coords.longitude)
 
-    document.querySelector('user-pos').innerText = `${pos.coords.latitude},${pos.coords.longitude}`
+    document.querySelector('.user-pos').innerText = `${pos.coords.latitude},${pos.coords.longitude}`
 }

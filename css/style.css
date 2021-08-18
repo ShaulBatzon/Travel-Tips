@@ -22,9 +22,10 @@ header{
     
 }
 
-/* h1{
-    position: fixed;
-} */
+h1{
+    /* position: fixed; */
+    font-family: sans-serif;
+}
 
 .nav-bar{
     display: flex;
