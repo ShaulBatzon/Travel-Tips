@@ -8,13 +8,73 @@ body {
     background-color: rgb(214, 213, 213);
 }
 
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+} */
+
+header{
+    /* display: flex; */
+    margin-inline-start: 3vw;
+    margin-inline-end: 5vw;
+    /* justify-content: space-between; */
+    
 }
 
+/* h1{
+    position: fixed;
+} */
 
+.nav-bar{
+    display: flex;
+    /* margin-block-start: 5vh; */
+    /* margin-inline-start: 3vw;  */
+    /* margin-inline-end: 5vw; */
+    /* justify-content: space-between; */
+    justify-content: flex-end;
+}
+
+.location-info-bar{
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 2vh;
+    margin-block-end: 3vh;
+}
+
+main{
+    display: flex;
+    margin-inline-start: 3vw;
+    margin-inline-end: 3vw;
+    height: 80vh;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    margin-inline-end: 2vw;
+}
+
+.weather{
+    flex-direction: column;
+    padding: 10vh;
+    background-color: darkred;
+    width: 20vw;
+    height: 23.5vh;
+    margin-block-end: 2vh;
+}
+
+.locations-table{
+    flex-direction: column;
+    padding: 6vh;
+    background-color:deeppink ;
+    height: 23.5vh;
+    width: 20vw;
+}
+
+.map{
+    width: 70vw;
+}
 
 
 
