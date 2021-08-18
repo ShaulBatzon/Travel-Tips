@@ -7,7 +7,8 @@ window.onPanTo = onPanTo;
 window.onGetLocs = onGetLocs;
 window.onGetUserPos = onGetUserPos;
 window.onGo = onGo;
-window.onMyLocation = onMyLocation;
+window.onCopyLoc = onCopyLoc;
+
 
 function onInit() {
     mapService.initMap()
@@ -46,6 +47,9 @@ function onGetUserPos() {
                 `Latitude: ${pos.coords.latitude} - Longitude: ${pos.coords.longitude}`
             mapService.panTo(pos.coords.latitude, pos.coords.longitude)
             mapService.addMarker({lat:pos.coords.latitude,lng:pos.coords.longitude})
+            document.querySelector('.user-pos').innerText = `${pos.coords.latitude},${pos.coords.longitude}`
+            document.querySelector('.hide').classList.remove('hide')
+            document.querySelector('.my-location-info').classList.add('hide')
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -58,13 +62,19 @@ function onPanTo() {
 
 function onGo(ev) {
     ev.preventDefault()
-    https://maps.googleapis.com/maps/api/geocode/json?address=,&key=AIzaSyDkC1SX9eq4XDMXvsJCgCu59wbuZ4kL898
-    // ev.GeolocationCoordinates
-    console.log(ev);
+    const elsearch = document.querySelector('form input[name=search-location]').value
+    mapService.coordsToCity(elsearch)
 }
 
-function onMyLocation() {
-    mapService.panTo(pos.coords.latitude, pos.coords.longitude)
-
-    document.querySelector('.user-pos').innerText = `${pos.coords.latitude},${pos.coords.longitude}`
+function onCopyLoc() {
+    getPosition()
+        .then(pos => {
+            const copyLocation = {latitude:pos.coords.latitude, longitude:pos.coords.longitude}
+        })
+        console.log(copyLocation);
+        // .then(Swal.fire(
+        //     'Good job!',
+        //     'You clicked the button!',
+        //     'success'
+        //   ))
 }

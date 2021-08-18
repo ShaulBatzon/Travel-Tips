@@ -21,9 +21,9 @@
             <button class="my-location" onclick="onGetUserPos()">My Location</button>
         </div>
              <div class="location-info-bar">
-            <div class="my-location-info "> <strong>Location :</strong></div>
+            <div class="my-location-info"> <strong>Location :</strong></div>
             <p class="hide"> My location : <span class="user-pos"></span></p>
-            <button class="copy-location">Copy Location</button>
+            <button class="copy-location" onclick="onCopyLoc()">Copy Location</button>
         </div>
 
     </header>
@@ -55,6 +55,8 @@
         <h6>Created by Moshe Dabush and Shaul Batzon</h6>
     </footer>
 
+    <script src="/lib/axios.js"></script>
+    <script src="/lib/swal.js"></script>
     <script type="module" src="js/app.controller.js"></script>
 </body>
 
