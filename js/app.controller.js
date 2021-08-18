@@ -6,6 +6,8 @@ window.onAddMarker = onAddMarker;
 window.onPanTo = onPanTo;
 window.onGetLocs = onGetLocs;
 window.onGetUserPos = onGetUserPos;
+window.onGo = onGo;
+
 
 function onInit() {
     mapService.initMap()
@@ -42,6 +44,7 @@ function onGetUserPos() {
             console.log('User position is:', pos.coords);
             document.querySelector('.user-pos').innerText =
                 `Latitude: ${pos.coords.latitude} - Longitude: ${pos.coords.longitude}`
+            mapService.panTo(pos.coords.latitude, pos.coords.longitude)
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -49,5 +52,18 @@ function onGetUserPos() {
 }
 function onPanTo() {
     console.log('Panning the Map');
-    mapService.panTo(35.6895, 139.6917);
+    mapService.panTo(34.6895, 139.6917);
+}
+
+function onGo(ev) {
+    ev.preventDefault()
+    https://maps.googleapis.com/maps/api/geocode/json?address=,&key=AIzaSyDkC1SX9eq4XDMXvsJCgCu59wbuZ4kL898
+    // ev.GeolocationCoordinates
+    console.log(ev);
+}
+
+function onMyLocation() {
+    mapService.panTo(pos.coords.latitude, pos.coords.longitude)
+
+    document.querySelector('user-pos').innerText = `${pos.coords.latitude},${pos.coords.longitude}`
 }
