@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,43 +9,52 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>TravelTip</h1>
-        <h2>Created by Moshe Dabush and Shaul Batzon</h2>
-        <div class="nav-bar">
+    <header>
+
+        <!-- <div class="container"> -->
+            <h1>TravelTip</h1>
+            <div class="nav-bar">
             <form onsubmit="onGo()">
-                <input type="search" placeholder="Enter Location" name="search-location">
-                <button class="go" for="search-location">Go</button>
-            </form>
-            <button class="my-location" >My Location</button>
-            <p class="hide"> My location : <span class="user-pos"></span></p>
-            <div class="my-location-info ">Location : </div>
+                        <input type="search" placeholder="Enter Location" name="search-location">
+                        <button class="go" for="search-location">Go</button>
+                    </form>
+                    <button class="my-location">My Location</button>
+                </div> <br>
+                <div class="my-location-info ">Location : </div>
+                <p class="hide"> My location : <span class="user-pos"></span></p>
             <button class="copy-location">Copy Location</button>
+    </header>
+
+
+    <main>
+
+        <div class="left-container">
+
+            <section class="weather">
+
+
+            </section>
+            <section class="locations-table">
+            <p>Locations: <span class="locs"></span></p>
+            </section>
         </div>
 
-
-        <section class="weather">
-
-        </section>
-
-        <section class="locations-table">
-            <p>Locations: <span class="locs"></span></p>
-
-        </section>
-
         <section class="map">
-            <div id="map" style="width: 100%; height: 400px;"></div>
-        <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Specific Location</button>
-        <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
-        <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-        <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
-    </section>
-        
+        <div id="map" style="width: 100%; height: 400px;"></div>
+            <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Specific Location</button>
+            <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
+            <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+            <button onclick="onPanTo()" class="btn-pan">Pan Map to Tokyo</button>
+        </section>
 
+    </main>
+    <!-- </div> -->
 
-    </div>
-    
+    <footer>
+        <h6>Created by Moshe Dabush and Shaul Batzon</h6>
+    </footer>
 
     <script type="module" src="js/app.controller.js"></script>
 </body>
+
 </html>
